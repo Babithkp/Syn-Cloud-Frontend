@@ -2,7 +2,7 @@
 const HomePage = () => {
   return (
     <>
-<div className="flex h-screen w-screen  bg-black text-white font-poppins">
+<div className="flex h-screen overflow-hidden  bg-black text-white font-poppins">
         <div className="mt-40 h-[50%] w-[50%] pl-14">
           <h1 className="text-5xl leading-snug">
           Hey, <br />

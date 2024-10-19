@@ -36,7 +36,7 @@ const focusAreas = [
 
 const CardContainer = () => {
   return (
-    <div className="mx-auto grid max-w-screen-xl grid-cols-1 gap-8 px-5 md:grid-cols-2 lg:grid-cols-3 lg:px-20">
+    <div className="mx-auto grid grid-cols-1 gap-8 px-5 md:grid-cols-2 lg:grid-cols-3 lg:px-20">
       {/* max-w-screen-xl limits the maximum width */}
       {/* Each Card component represents a focus area with a title and description */}
 
@@ -53,7 +53,7 @@ const CardContainer = () => {
 
 const Focus = () => {
   return (
-    <div className="min-h-screen w-screen overflow-hidden bg-black p-5 text-white font-poppins">
+    <div className="min-h-screen  bg-black p-5 text-white font-poppins">
       {" "}
       {/* overflow-hidden will prevent content from overflowing */}
       <div className="text-center">

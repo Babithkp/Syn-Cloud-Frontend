@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <>
       {/* Main container with background animation and full-screen height/width */}
-      <div className="bg-gradient-radial animate-gradient-expansion h-screen w-screen text-white font-poppins">
+      <div className="bg-gradient-radial animate-gradient-expansion h-screen  text-white font-poppins">
         {/* Navbar section with brand and menu items */}
         <div className="flex justify-between p-5 text-2xl">
           <div className=" flex align-middle">
@@ -24,7 +24,7 @@ const Navbar = () => {
         {/* Main headline and description section */}
         <div className="mt-40 text-center">
           <p className="text-xl">
-            <strong className="mb-5 block w-screen text-center text-6xl">
+            <strong className="mb-5 block  text-center text-6xl">
               Cloud Automation <br /> Made Easy.
             </strong>
             Effortlessly automate your AWS services, so you can focus on

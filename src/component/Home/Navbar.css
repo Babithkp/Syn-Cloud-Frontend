@@ -28,6 +28,3 @@
     animation: gradient-expansion 4s ease-in-out infinite alternate;
   }
   
-  body{
-    overflow-x: hidden;
-  }
