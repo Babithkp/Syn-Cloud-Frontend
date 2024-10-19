@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from './component/Home/Navbar'
 import HomePage from './component/Home/HomePage'
 import Focus from './component/Focus/Focus'

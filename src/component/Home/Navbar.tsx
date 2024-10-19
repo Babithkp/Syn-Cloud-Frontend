@@ -1,4 +1,3 @@
-import React from "react";
 import "./Navbar.css";
 import { FaWandMagicSparkles } from "react-icons/fa6"; // Importing magic wand icon
 import { RiArrowDownDoubleLine } from "react-icons/ri"; // Importing double arrow down icon
