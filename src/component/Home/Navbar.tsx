@@ -1,17 +1,21 @@
 import "./Navbar.css";
 import { FaWandMagicSparkles } from "react-icons/fa6"; // Importing magic wand icon
 import { RiArrowDownDoubleLine } from "react-icons/ri"; // Importing double arrow down icon
+import SyncCloud_Logo from '../../assets/syncloud_logo.svg'
 
 const Navbar = () => {
   return (
     <>
       {/* Main container with background animation and full-screen height/width */}
-      <div className="bg-gradient-radial animate-gradient-expansion h-screen w-screen text-white">
+      <div className="bg-gradient-radial animate-gradient-expansion h-screen w-screen text-white font-poppins">
         {/* Navbar section with brand and menu items */}
         <div className="flex justify-between p-5 text-2xl">
-          <strong>Syncloud</strong> {/* Branding title */}
-          <ul className="flex cursor-pointer gap-4">
-            <li className="hover:underline">Try SyncCloud!</li>
+          <div className=" flex align-middle">
+            <img src={SyncCloud_Logo} /> 
+            <p className=" my-auto mx-2 ">Sync Cloud</p> 
+          </div>
+          <ul className="flex relative cursor-pointer gap-4 text-[1.2rem] -left-[2%]">
+            <li className="hover:underline">Try Sync Cloud!</li>
             <li className="hover:underline">Sign Up</li>
             <li className="hover:underline">Log in</li>
           </ul>
@@ -50,7 +54,7 @@ const Navbar = () => {
         </div>
 
         {/* Section for encouraging users to scroll down */}
-        <div className="mt-14 flex flex-col items-center text-center">
+        <div className="mt-14 flex flex-col items-center text-center ">
           <p>
             Not sure what you can do with Syncloud? Scroll down to learn more.
           </p>
