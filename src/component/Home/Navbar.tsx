@@ -7,14 +7,14 @@ const Navbar = () => {
   return (
     <>
       {/* Main container with background animation and full-screen height/width */}
-      <div className="bg-gradient-radial animate-gradient-expansion h-screen w-screen text-white">
+      <div className="bg-gradient-radial animate-gradient-expansion h-screen w-screen text-white font-poppins">
         {/* Navbar section with brand and menu items */}
         <div className="flex justify-between p-5 text-2xl">
           <div className=" flex align-middle">
             <img src={SyncCloud_Logo} /> 
-            <p className=" my-auto mx-2 poppins-semibold">Sync Cloud</p> 
+            <p className=" my-auto mx-2 ">Sync Cloud</p> 
           </div>
-          <ul className="flex relative cursor-pointer gap-4 poppins-regular text-[1.2rem] -left-[2%]">
+          <ul className="flex relative cursor-pointer gap-4 text-[1.2rem] -left-[2%]">
             <li className="hover:underline">Try Sync Cloud!</li>
             <li className="hover:underline">Sign Up</li>
             <li className="hover:underline">Log in</li>
@@ -22,7 +22,7 @@ const Navbar = () => {
         </div>
 
         {/* Main headline and description section */}
-        <div className="mt-40 text-center poppins-regular">
+        <div className="mt-40 text-center">
           <p className="text-xl">
             <strong className="mb-5 block w-screen text-center text-6xl">
               Cloud Automation <br /> Made Easy.
@@ -32,7 +32,7 @@ const Navbar = () => {
           </p>
 
           {/* Input section with magic wand icon and button for automation */}
-          <div className="mt-5 flex items-center justify-center poppins-regular">
+          <div className="mt-5 flex items-center justify-center">
             <div className="relative flex w-[35rem]">
               <FaWandMagicSparkles
                 className="absolute left-3 top-1/2 -translate-y-1/2 transform text-white"
@@ -54,7 +54,7 @@ const Navbar = () => {
         </div>
 
         {/* Section for encouraging users to scroll down */}
-        <div className="mt-14 flex flex-col items-center text-center poppins-regular">
+        <div className="mt-14 flex flex-col items-center text-center ">
           <p>
             Not sure what you can do with Syncloud? Scroll down to learn more.
           </p>
