@@ -5,7 +5,7 @@ import "./Navbar.css";
 const HomePage = () => {
   return (
     <>
-      <div className="flex justify-center bg-gradient-radial animate-gradient-expansion h-[100vh] text-center font-poppins font-norma">
+      <div className="flex justify-center bg-gradient-radial animate-gradient-expansion h-[100vh] text-center font-poppins font-normal">
         <div className=" my-auto text-white">
         <p className="text-xl">
             <strong className="mb-5 block  text-center text-6xl">
