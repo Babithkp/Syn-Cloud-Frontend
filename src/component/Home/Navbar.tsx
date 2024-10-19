@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <>
       {/* Main container with background animation and full-screen height/width */}
-      <div className="bg-gradient-radial animate-gradient-expansion h-screen  text-white font-poppins">
+      <div className="bg-gradient-radial animate-gradient-expansion h-screen  text-white ">
         {/* Navbar section with brand and menu items */}
         <div className="flex justify-between p-5 text-2xl">
           <div className=" flex align-middle">

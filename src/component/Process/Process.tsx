@@ -2,7 +2,7 @@
 const Process = () => {
   return (
     <>
-      <div className="h-screen bg-black font-poppins"></div>
+      <div className="h-screen bg-black "></div>
     </>
   );
 };
