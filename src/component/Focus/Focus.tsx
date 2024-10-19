@@ -53,7 +53,7 @@ const CardContainer = () => {
 
 const Focus = () => {
   return (
-    <div className="min-h-screen  bg-black p-5 text-white font-poppins">
+    <div className="min-h-screen  bg-black p-5 text-white font-poppins font-normal">
       {" "}
       {/* overflow-hidden will prevent content from overflowing */}
       <div className="text-center">
