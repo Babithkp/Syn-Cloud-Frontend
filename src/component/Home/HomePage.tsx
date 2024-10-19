@@ -1,27 +1,49 @@
+import { FaWandMagicSparkles } from "react-icons/fa6"; // Importing magic wand icon
+import { RiArrowDownDoubleLine } from "react-icons/ri"; // Importing double arrow down icon
+import "./Navbar.css";
 
 const HomePage = () => {
   return (
     <>
-<div className="flex h-screen overflow-hidden  bg-black text-white font-poppins">
-        <div className="mt-40 h-[50%] w-[50%] pl-14">
-          <h1 className="text-5xl leading-snug">
-          Hey, <br />
-          We're<span className="text-[#5e2ea7]"> Syncloud</span>
-          </h1>
-
-          <p className=" text-left mt-7 leading-7">
-            Syncloud is a cloud automation platform that simplifies the
-            management of AWS services. It automates tasks related to EC2, S3,
-            VPC, Load Balancers, Auto Scaling Groups, and EBS, helping
-            businesses enhance productivity and reduce operational costs. With
-            Syncloud, organizations can efficiently harness the power of AWS
-            while focusing on strategic initiatives.
+      <div className="flex justify-center bg-gradient-radial animate-gradient-expansion h-[100vh] text-center font-poppins font-norma">
+        <div className=" my-auto text-white">
+        <p className="text-xl">
+            <strong className="mb-5 block  text-center text-6xl">
+              Cloud Automation <br /> Made Easy.
+            </strong>
+            Effortlessly automate your AWS services, so you can focus on
+            innovation.
           </p>
-          <button className="rounded-2xl bg-gradient-to-l from-purple-300 to-purple-500 h-[40px] w-[10vw] mt-8">
-            Try it now 
-          </button>
+
+          {/* Input section with magic wand icon and button for automation */}
+          <div className="mt-5 flex items-center justify-center">
+            <div className="relative flex w-[35rem]">
+              <FaWandMagicSparkles
+                className="absolute left-3 top-1/2 -translate-y-1/2 transform text-white"
+                size={20} // Magic wand icon placed on the left side of the input
+              />
+              <input
+                type="text"
+                className="w-full rounded-2xl border border-white bg-transparent p-2 pl-10 pr-[6rem] text-white focus:outline-none"
+                placeholder="Enter your AWS service or task to automate" // Input field for entering tasks
+              />
+              <button
+                type="submit"
+                className="absolute right-2 top-1/2 h-[30px] w-[25%] -translate-y-1/2 transform rounded-2xl bg-[#5e2ea7] text-white"
+              >
+                Automate now {/* Button to trigger the automation */}
+              </button>
+            </div>
+          </div>
+
+          {/* Section for encouraging users to scroll down */}
+          <div className="flex flex-col items-center text-center mt-12">
+            <p>
+              Not sure what you can do with Syncloud? Scroll down to learn more.
+            </p>
+            <RiArrowDownDoubleLine size={30} className="mt-2" /> {/* Double arrow down icon */}
+          </div>
         </div>
-        <div className="mt-40 h-[50%] w-[50%]">{/* model */}</div>
       </div>
     </>
   );
