@@ -36,7 +36,7 @@ const Connect_aws = () => {
                   <div className="h-[8rem] border-l border-dashed border-white ml-5"></div>
 
                   {/* Step 2 */}
-                  <Link to={"/connect_aws"} className="flex items-center space-x-4 text-gray-400 text-[1.5rem]">
+                  <Link to={"/connect_aws"} className="flex items-center space-x-4 text-white text-[1.5rem]">
                     <span>Connect your AWS account</span>
                     <div className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-400">
                       2
@@ -70,7 +70,7 @@ const Connect_aws = () => {
                   </div>
 
                   {/* Next Button */}
-                  <button className="w-full py-3 bg-white text-purple-800 rounded-lg font-semibold">
+                  <button className="w-full py-3 bg-white text-purple-800 rounded-lg font-semibold hover:bg-slate-200 hover:duration-150">
                     Next
                   </button>
                 </form>

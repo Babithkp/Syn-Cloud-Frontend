@@ -80,7 +80,7 @@ const Sign_up = () => {
                   </div>
 
                   {/* Next Button */}
-                  <button className="w-full py-3 bg-white text-purple-800 rounded-lg font-semibold">
+                  <button className="w-full py-3 bg-white text-purple-800 rounded-lg font-semibold hover:bg-slate-200 hover:duration-150">
                     Next
                   </button>
 
