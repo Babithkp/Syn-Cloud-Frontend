@@ -2,8 +2,8 @@
     background: radial-gradient(
       circle at top left,
       rgb(255, 255, 255) 0%,
-      #7741CC 20%,
-      black 90%
+      #3e1e70 15%,
+      black 70%
     );
     background-size: 100% 100%;
     background-position: bottom right; /* Initial position at bottom right */

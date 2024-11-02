@@ -41,8 +41,8 @@ const Sign_in = () => {
                     <span className="my-auto "><FaKey size={20}/></span>
                 </div>
 
-                <button className="w-full py-3 bg-white text-purple-800 rounded-lg font-semibold my-3">
-                    Submit
+                <button className="w-full py-3 bg-white text-purple-800 rounded-lg font-semibold my-3 hover:bg-slate-200 hover:duration-150">
+                  Submit
                 </button>
 
                 <div className="flex items-center space-x-2 my-3">
@@ -58,7 +58,7 @@ const Sign_in = () => {
 
                 {/* Google Sign-in Button */}
                 <button className="w-full py-3 bg-transparent border border-gray-500 rounded-lg font-semibold my-3">
-                    Sign in using Google
+                  Sign in using Google
                 </button>
             </form>
 
