@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 
 const steps = [
-  { title: "Login into your synccloud account", title1: "Login", description: "Log in to your Syncloud account to securely manage and automate your AWS services. Access a user-friendly dashboard to optimize and control your cloud resources with ease.  Experience seamless cloud management with real-time monitoring and cost-effective solutions. Simplify complex AWS tasks and ensure your infrastructure runs efficiently." },
+  { title: "Login into your synccloud account", title1: "Login", description: "Log in to your Syncloud account to securely manage and automate your AWS services. Access a user-friendly dashboard to optimize and control your cloud resources with ease. Experience seamless cloud management with real-time monitoring and cost-effective solutions. Simplify complex AWS tasks and ensure your infrastructure runs efficiently." },
   { title: "Provide AWS Access", title1: "Access to AWS", description: "Access to AWS through Syncloud provides a simplified, secure interface to manage and automate your cloud infrastructure. With Syncloud, you can efficiently control AWS services, monitor performance, and optimize configurations, all in one streamlined platform designed to enhance scalability and reduce costs." },
   { title: "Input your access code", title1: "Access Code", description: "Input your access code to confirm your identity and gain secure entry to your Syncloud account. This essential step protects your AWS services by ensuring that only you can manage and automate your cloud resources." },
   { title: "Instruction to initiate service automation", title1: "Automating Service", description: "Easily configure your settings to automate routine AWS tasks, streamline workflows, and enhance efficiency, allowing you to focus on scaling your business while reducing manual overhead." },
@@ -27,29 +27,30 @@ const Process: React.FC = () => {
 
   return (
     <>
-      <div className=" bg-black text-white text-center font-poppins font-normal ">
-        <h1 className=" text-5xl font-bold ">Our Process</h1>
-        <p className=" p-4 text-xl ">Simplyfying AWS automation by seamlessly configuring services to enhance efficiency and optimize cloud resource management</p>
+      <div className="bg-black text-white text-center font-poppins font-normal">
+        <h1 className="text-5xl font-bold">Our Process</h1>
+        <p className="p-4 text-xl">Simplifying AWS automation by seamlessly configuring services to enhance efficiency and optimize cloud resource management</p>
       </div>
       <div className="h-[128vh] relative flex justify-center items-center text-white"
         style={{
           background: "radial-gradient(circle, #4B237F, #000000)",
         }}
       >
-        <div className=" w-[70vw] flex align-middle items-center gap-10">
-
+        <div className="w-[70vw] flex align-middle items-center gap-10">
           {/* Left Side - Steps with Dotted Line */}
-          <div className="relative h-[85vh] w-[60%] flex flex-col">
+          <div className="relative h-full w-[60%] flex flex-col">
             {/* Dotted Line */}
-            <div className="border-l-2 border-dotted border-gray-600 absolute right-4 top-10"
+            <div
+              className="border-l-2 border-dotted border-gray-600 absolute right-4 top-5"
               style={{
-                height: `${(currentStep + 1) * 16}%`, // Adjust height based on the current step
-              }}></div>
+                height: "calc(100% - 5rem)", // Ensures the line extends only to the last step
+              }}
+            ></div>
 
             {/* Steps */}
             {steps.map((step, index) => (
               <div key={index} className="flex items-center mb-8 relative justify-between">
-                <span className={`my-5 text-2xl text-right w-[90%] ${index == currentStep ? "text-white font-semibold " : "text-gray-400"}`}>
+                <span className={`my-5 text-2xl text-right w-[90%] ${index === currentStep ? "text-white font-semibold" : "text-gray-400"}`}>
                   {step.title}
                 </span>
                 <div
@@ -63,21 +64,20 @@ const Process: React.FC = () => {
                 </div>
               </div>
             ))}
-
           </div>
 
           {/* Right Side - Step Content */}
           <div className="flex-1 w-[40%] overflow-hidden md:h-[110vh]">
-            {
-              steps.map((step, index) => {
-                return (
-                  <div className={` ${(index == currentStep) ? "" : "opacity-0"} text-start absolute top-9 w-[25%] h-[45vh] bg-gray-500 bg-opacity-50 backdrop-blur-md p-6 rounded-lg shadow-lg`} style={{ marginTop: `${index * 7}%` }}>
-                    <h2 className="text-2xl font-bold mb-4">{step.title1}</h2>
-                    <p className="text-gray-300">{step.description}</p>
-                  </div>
-                )
-              })
-            }
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className={` ${index === currentStep ? "" : "opacity-0"} text-start absolute top-9 w-[25%] h-[45vh] bg-gray-500 bg-opacity-50 backdrop-blur-md p-6 rounded-lg shadow-lg`}
+                style={{ marginTop: `${index * 7}%` }}
+              >
+                <h2 className="text-2xl font-bold mb-4">{step.title1}</h2>
+                <p className="text-gray-300">{step.description}</p>
+              </div>
+            ))}
           </div>
         </div>
 
