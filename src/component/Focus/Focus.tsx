@@ -6,8 +6,8 @@ const Focus = () => {
       {" "}
       {/* overflow-hidden will prevent content from overflowing */}
       <div className="text-center">
-        <h1 className="text-5xl font-bold">Our Focus</h1>
-        <p className="pt-2 text-lg">
+        <h1 className="text-5xl font-bold ">Our Focus</h1>
+        <p className="pt-2 text-xl font-thin">
           Simplifying AWS automation with cost-effective, scalable, and secure
           cloud management solutions
         </p>

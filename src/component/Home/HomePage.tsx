@@ -7,7 +7,7 @@ const HomePage = () => {
     <>
       <div className="flex justify-center bg-gradient-radial animate-gradient-expansion h-[100vh] text-center font-poppins font-normal">
         <div className=" my-auto text-white">
-        <p className="text-xl">
+        <p className="text-xl mt-14">
             <strong className="mb-5 block  text-center text-6xl">
               Cloud Automation <br /> Made Easy.
             </strong>
@@ -16,8 +16,8 @@ const HomePage = () => {
           </p>
 
           {/* Input section with magic wand icon and button for automation */}
-          <div className="mt-5 flex items-center justify-center">
-            <div className="relative flex w-[35rem]">
+          <div className="mt-12 flex items-center justify-center">
+            <div className="relative flex w-[40rem] h-[3rem]">
               <FaWandMagicSparkles
                 className="absolute left-3 top-1/2 -translate-y-1/2 transform text-white"
                 size={20} // Magic wand icon placed on the left side of the input
@@ -37,7 +37,7 @@ const HomePage = () => {
           </div>
 
           {/* Section for encouraging users to scroll down */}
-          <div className="flex flex-col items-center text-center mt-12">
+          <div className="flex flex-col items-center text-center mt-20">
             <p>
               Not sure what you can do with Syncloud? Scroll down to learn more.
             </p>
