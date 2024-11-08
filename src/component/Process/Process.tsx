@@ -27,9 +27,9 @@ const Process: React.FC = () => {
 
   return (
     <>
-      <div className="bg-black text-white text-center font-poppins font-normal">
+      <div className="bg-black text-white text-center font-poppins ">
         <h1 className="text-5xl font-bold">Our Process</h1>
-        <p className="p-4 text-xl">Simplifying AWS automation by seamlessly configuring services to enhance efficiency and optimize cloud resource management</p>
+        <p className="p-4 text-xl font-thin">Simplifying AWS automation by seamlessly configuring services to enhance efficiency and optimize cloud resource management</p>
       </div>
       <div className="h-[128vh] relative flex justify-center items-center text-white"
         style={{
@@ -38,7 +38,7 @@ const Process: React.FC = () => {
       >
         <div className="w-[70vw] flex align-middle items-center gap-10">
           {/* Left Side - Steps with Dotted Line */}
-          <div className="relative h-full w-[60%] flex flex-col">
+          <div className="relative h-full w-[60%] flex flex-col font-extralight">
             {/* Dotted Line */}
             <div
               className="border-l-2 border-dotted border-gray-600 absolute right-4 top-5"
@@ -49,12 +49,12 @@ const Process: React.FC = () => {
 
             {/* Steps */}
             {steps.map((step, index) => (
-              <div key={index} className="flex items-center mb-8 relative justify-between">
+              <div key={index} className="flex items-center mb-10 relative justify-between">
                 <span className={`my-5 text-2xl text-right w-[90%] ${index === currentStep ? "text-white font-semibold" : "text-gray-400"}`}>
                   {step.title}
                 </span>
                 <div
-                  className={`w-8 h-8 flex items-center justify-center rounded-full border-2 transition-all duration-300 ${
+                  className={`w-10 h-10 flex items-center justify-center rounded-full border-2 transition-all duration-300 ${
                     index <= currentStep ? "" : "bg-gray-400 backdrop:blur-md bg-opacity-50 border-gray-400"
                   }`}
                 >
@@ -67,11 +67,11 @@ const Process: React.FC = () => {
           </div>
 
           {/* Right Side - Step Content */}
-          <div className="flex-1 w-[40%] overflow-hidden md:h-[110vh]">
+          <div className="flex-1 font-light ">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={` ${index === currentStep ? "" : "opacity-0"} text-start absolute top-9 w-[25%] h-[45vh] bg-gray-500 bg-opacity-50 backdrop-blur-md p-6 rounded-lg shadow-lg`}
+                className={` ${index === currentStep ? "" : "opacity-0"} w-[20%] h-[40%] text-start transform translate-transform overflow-hidden absolute top-9 bg-gray-500 bg-opacity-50 backdrop-blur-md p-4 rounded-lg shadow-lg`}
                 style={{ marginTop: `${index * 7}%` }}
               >
                 <h2 className="text-2xl font-bold mb-4">{step.title1}</h2>

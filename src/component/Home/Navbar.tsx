@@ -10,9 +10,9 @@ const Navbar = () => {
         <div className="flex justify-between px-6 py-1 text-2xl mt-1">
           <Link to={"/"} className=" flex align-middle ml-2">
             <img src={SyncCloud_Logo} /> 
-            <p className=" my-auto mx-2 font-bold">Syncloud</p> 
+            <p className=" my-auto mx-2 font-bold font-poppins text-3xl ">Syncloud</p> 
           </Link>
-          <ul className="flex relative cursor-pointer gap-4 text-[1.2rem] -left-[2%] mt-2">
+          <ul className="flex relative cursor-pointer gap-4 text-[1.5rem] -left-[2%] mt-2">
             <Link to={"/"} className="hover:underline" >Try Syncloud!</Link>
             <Link to={"/sign_up"} className="hover:underline">Sign Up</Link>
             <Link to={"/sign_in"} className="hover:underline">Log in</Link>

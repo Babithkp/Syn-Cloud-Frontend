@@ -2,8 +2,13 @@ import { Link } from 'react-router-dom'
 import SyncCloud_Logo from '../../assets/syncloud_logo.svg'
 import { MdEmail } from "react-icons/md";
 import { FaKey } from "react-icons/fa";
+import  { useState } from 'react';
+import { FcGoogle } from 'react-icons/fc';
+import { TiArrowLeft } from "react-icons/ti";
 
 const Sign_in = () => {
+
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className="bg-gradient-radial animate-gradient-expansion flex flex-col w-[100vw] h-[100vh] font-poppins">
@@ -15,15 +20,21 @@ const Sign_in = () => {
             </Link> 
             <Link to={"/sign_up"} className='absolute right-8 flex text-[1.2rem] text-white mt-4'>Create a  Account</Link>
         </div>
+          <h2 className="text-white flex justify-evenly text-[2.3rem] w-[100vw] text-center text-3xl font-semibold mt-[1rem] mb-[4rem]">
+          <Link to='/'
+          className=' text-white absolute left-[15%] text-xl underline flex justify-evenly '
+          >
+          <TiArrowLeft className=' mt-1' />
+            Back
+          </Link>
+            Login
+          </h2>
 
         <div className="SignIN_Content h-[75vh] w-[40vw] m-auto text-white">
 
-            
-            <p className=' text-[2rem] text-center mb-10 '>Login</p>
-
             <form action="" className='flex flex-col'>
 
-                 <div className="relative flex flex-row-reverse border border-gray-400 px-3 py-1 rounded-lg my-3">
+                 <div className="relative flex flex-row-reverse border border-gray-400 px-3 py-1 rounded-3xl my-3">
                     <input
                       type="email"
                       placeholder="syncloud@gmail.com"
@@ -32,7 +43,7 @@ const Sign_in = () => {
                     <span className="my-auto "><MdEmail size={25}/></span>
                 </div>
 
-                <div className="relative flex flex-row-reverse border border-gray-400 px-3 py-1 rounded-lg my-3">
+                <div className="relative flex flex-row-reverse border border-gray-400 px-3 py-1 rounded-3xl my-3">
                     <input
                       type="password"
                       placeholder="Enter a password"
@@ -41,9 +52,9 @@ const Sign_in = () => {
                     <span className="my-auto "><FaKey size={20}/></span>
                 </div>
 
-                <button className="w-full py-3 bg-white text-purple-800 rounded-lg font-semibold my-3 hover:bg-slate-200 hover:duration-150">
-                  Submit
-                </button>
+                <button className="w-full py-3 bg-white text-purple-800 rounded-3xl font-semibold hover:bg-transparent border-2 hover:duration-300 hover:text-white border-white ">
+                    Submit
+                  </button>
 
                 <div className="flex items-center space-x-2 my-3">
                     <input type="checkbox" id="remember" className="text-purple-700" />
@@ -57,9 +68,18 @@ const Sign_in = () => {
                   </div>
 
                 {/* Google Sign-in Button */}
-                <button className="w-full py-3 bg-transparent border border-gray-500 rounded-lg font-semibold my-3">
-                  Sign in using Google
-                </button>
+                <button
+                    className={`w-full p-5 bg-transparent border hover:duration-300 border-gray-500 rounded-3xl font-semibold flex items-center justify-center transition duration-300 ${
+                      isHovered ? 'bg-white text-black' : 'text-white'
+                    }`}
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                  >
+                    {isHovered ? (
+                      <FcGoogle className="mr-2 text-2xl" />
+                    ) : null}
+                    Sign in using Google
+                  </button>
             </form>
 
         </div>
