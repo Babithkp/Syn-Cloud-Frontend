@@ -22,19 +22,23 @@ const Sign_up = () => {
             </div>
 
 
-        <h2 className="text-white flex justify-evenly text-[2.3rem] w-[100vw] text-center text-3xl font-semibold mt-[1rem] mb-[4rem]">
-        <Link to='/'
-        className=' text-white text-xl underline flex justify-evenly '
-        >
-        <TiArrowLeft className=' mt-1' />
-          Back
-        </Link>
-          Create your Syncloud Account
-        </h2>
+            <h2 className="text-white flex justify-between items-center w-full text-[2.3rem] text-3xl font-semibold mt-[1rem] mb-[4rem]">
+              <Link 
+                to='/' 
+                className='text-white text-xl hover:underline flex items-center ml-[5%]'
+              >
+                <TiArrowLeft className='m-1' />
+                Back
+              </Link>
+              <span className="flex-1 text-center">
+                Create your Syncloud Account
+              </span>
+            </h2>
+
         
         <div className="SignUp_content flex justify-center">
-            <div className="w-1/3 my-auto text-left">
-            <div className="flex flex-col space-y-8 ">
+            <div className="w-1/3 my-auto flex  text-left">
+            <div className="flex flex-col space-y-8">
               {/* Step 1 */}
               <Link to={"/sign_up"} className="flex items-center space-x-4 text-white text-[1.3rem]">
                 <span>Create your Syncloud Account</span>
@@ -44,8 +48,8 @@ const Sign_up = () => {
               </Link>
 
               {/* Dotted Line */}
-              <div className="flex justify-end ">
-                <div className="h-[8rem] border-l border-dotted relative right-44 border-gray-300"></div>
+              <div className="flex justify-end mr-[5%]  ">
+                <div className="h-[8rem] border-l border-dotted relative  border-gray-300"></div>
               </div>
 
               {/* Step 2 */}
@@ -94,13 +98,13 @@ const Sign_up = () => {
                   </div>
 
                   {/* Next Button */}
-                  <button className="w-full py-3 bg-white hover:duration-300 text-purple-800 rounded-3xl font-semibold hover:bg-transparent border-2 hover:text-white border-white ">
+                  <button className="w-full py-3 bg-white hover:duration-700 text-purple-800 rounded-3xl font-semibold hover:bg-transparent border-2 hover:text-white border-white ">
                     Next
                   </button>
 
                   {/* Remember Me Checkbox */}
-                  <div className="flex items-center space-x-2 ">
-                    <input type="checkbox" id="remember" className="text-purple-700  bg-opacity-50 opacity-50  " />
+                  <div className="flex items-center space-x-2  ">
+                    <input type="checkbox" id="remember" className="backdrop:blur-md  bg-opacity-70 opacity-40  " />
                     <label htmlFor="remember" className="text-gray-400">Remember me!</label>
                   </div>
 
@@ -113,7 +117,7 @@ const Sign_up = () => {
 
                   {/* Google Sign-in Button */}
                   <button
-                    className={`w-full p-5 bg-transparent border hover:duration-300 border-gray-500 rounded-3xl font-semibold flex items-center justify-center transition duration-300 ${
+                    className={`w-full p-5 bg-transparent border hover:duration-700 border-gray-500 rounded-3xl font-semibold flex items-center justify-center transition duration-700 ${
                       isHovered ? 'bg-white text-black' : 'text-white'
                     }`}
                     onMouseEnter={() => setIsHovered(true)}

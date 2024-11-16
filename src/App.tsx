@@ -3,6 +3,7 @@ import Home from "./component/Home"
 import Sign_in from "./component/Sign_In_Sign_Up/Sign_in"
 import Sign_up from "./component/Sign_In_Sign_Up/Sign_up"
 import Connect_aws from "./component/Sign_In_Sign_Up/Connect_aws"
+import Prompt from "./component/PlayGround/Prompt"
 
 const App = () => {
   return (
@@ -30,6 +31,11 @@ const App = () => {
           element={<Connect_aws/>}
           path="/connect_aws"
           />
+
+        <Route
+          element={<Prompt/>}
+          path="/prompt"
+        />
 
         </Routes>
 
