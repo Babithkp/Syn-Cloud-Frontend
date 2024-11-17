@@ -22,7 +22,7 @@ const Sign_in = () => {
         </div>
           <h2 className="text-white flex justify-evenly text-[2.3rem] w-[100vw] text-center text-3xl font-semibold mt-[1rem] mb-[4rem]">
           <Link to='/'
-          className=' text-white absolute left-[15%] text-xl underline flex justify-evenly '
+          className=' text-white absolute left-[15%] text-xl hover:underline flex justify-evenly '
           >
           <TiArrowLeft className=' mt-1' />
             Back
@@ -52,12 +52,12 @@ const Sign_in = () => {
                     <span className="my-auto "><FaKey size={20}/></span>
                 </div>
 
-                <button className="w-full py-3 bg-white text-purple-800 rounded-3xl font-semibold hover:bg-transparent border-2 hover:duration-300 hover:text-white border-white ">
+                <button className="w-full py-3 bg-white text-purple-800 rounded-3xl font-semibold hover:bg-transparent border-2 hover:duration-700 hover:text-white border-white ">
                     Submit
                   </button>
 
                 <div className="flex items-center space-x-2 my-3">
-                    <input type="checkbox" id="remember" className="text-purple-700" />
+                    <input type="checkbox" id="remember" className="backdrop:blur-md bg-opacity-50 opacity-40" />
                     <label htmlFor="remember" className="text-gray-400">Remember me!</label>
                 </div>
 
@@ -69,7 +69,7 @@ const Sign_in = () => {
 
                 {/* Google Sign-in Button */}
                 <button
-                    className={`w-full p-5 bg-transparent border hover:duration-300 border-gray-500 rounded-3xl font-semibold flex items-center justify-center transition duration-300 ${
+                    className={`w-full p-5 bg-transparent border hover:duration-700 border-gray-500 rounded-3xl font-semibold flex items-center justify-center transition duration-300 ${
                       isHovered ? 'bg-white text-black' : 'text-white'
                     }`}
                     onMouseEnter={() => setIsHovered(true)}

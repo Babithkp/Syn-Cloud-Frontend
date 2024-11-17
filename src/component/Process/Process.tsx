@@ -96,7 +96,7 @@ const Process: React.FC = () => {
             onClick={nextStep}
             disabled={currentStep === steps.length - 1}
             className={`${
-              currentStep === steps.length - 1 ? " cursor-not-allowed border-2 border-red-600" : ""
+              currentStep === steps.length - 1 ? " cursor-not-allowed" : ""
             } bg-gray-400 bg-opacity-50 backdrop-blur-md h-14 text-white font-bold py-2 px-4 rounded-2xl transition-all duration-300`}
           >
             <IoIosArrowDown />

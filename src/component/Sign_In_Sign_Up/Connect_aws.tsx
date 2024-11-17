@@ -22,29 +22,30 @@ const Connect_aws = () => {
         </h2>
         
         <div className="SignIn_content flex justify-center">
-            <div className="w-1/3 my-auto border-r-2 border-gray-500">
-            <div className="flex flex-col space-y-8 ">
+        <div className="w-1/3 my-auto flex  text-left">
+            <div className="flex flex-col space-y-8">
               {/* Step 1 */}
               <Link to={"/sign_up"} className="flex items-center space-x-4 text-white text-[1.3rem]">
                 <span>Create your Syncloud Account</span>
-                <div className="flex items-center justify-center w-10 h-10 rounded-full border-2  bg-gray-500 backdrop:blur-md bg-opacity-50  border-white">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 bg-gray-500 backdrop:blur-md bg-opacity-50  border-white">
                   1
                 </div>
               </Link>
 
               {/* Dotted Line */}
-              <div className="flex justify-end ">
-                <div className="h-[8rem] border-l border-dotted relative right-44 border-gray-300"></div>
+              <div className="flex justify-end mr-[5%]  ">
+                <div className="h-[8rem] border-l border-dotted relative  border-gray-300"></div>
               </div>
 
               {/* Step 2 */}
               <Link to={"/connect_aws"} className="flex items-center space-x-12 text-gray-400 text-[1.3rem]">
                 <span>Connect your AWS account</span>
-                <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-gray-400">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full border-2  border-gray-400">
                   2
                 </div>
               </Link>
             </div>
+
             </div>
 
              {/* Right Form Section */}
@@ -72,7 +73,7 @@ const Connect_aws = () => {
                   </div>
 
                   {/* Next Button */}
-                  <button className="w-full py-3 bg-white hover:duration-300 text-purple-800 rounded-3xl font-semibold hover:bg-transparent border-2 hover:text-white border-white ">
+                  <button className="w-full py-3 bg-white hover:duration-700 text-purple-800 rounded-3xl font-semibold hover:bg-transparent border-2 hover:text-white border-white ">
                     Next
                   </button>
                 </form>

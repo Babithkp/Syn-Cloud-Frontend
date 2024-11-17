@@ -1,6 +1,7 @@
 import { FaWandMagicSparkles } from "react-icons/fa6"; // Importing magic wand icon
 import { RiArrowDownDoubleLine } from "react-icons/ri"; // Importing double arrow down icon
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -29,9 +30,9 @@ const HomePage = () => {
               />
               <button
                 type="submit"
-                className="absolute right-2 top-1/2 h-[30px] w-[25%] -translate-y-1/2 transform rounded-2xl bg-[#5e2ea7] text-white"
+                className="absolute right-2 top-1/2 h-[30px] w-[25%] -translate-y-1/2 transform rounded-3xl bg-[#5e2ea7] text-white"
               >
-                Automate now {/* Button to trigger the automation */}
+                <Link to={"/prompt"}>Automate now </Link>
               </button>
             </div>
           </div>
