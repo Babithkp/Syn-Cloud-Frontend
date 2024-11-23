@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Home from "./component/Home"
-import Sign_in from "./component/Sign_In_Sign_Up/Sign_in"
-import Sign_up from "./component/Sign_In_Sign_Up/Sign_up"
-import Connect_aws from "./component/Sign_In_Sign_Up/Connect_aws"
-import Prompt from "./component/PlayGround/Prompt"
+import Home from "./components/Home"
+import Sign_in from "./components/Sign_In_Sign_Up/Sign_in"
+import Sign_up from "./components/Sign_In_Sign_Up/Sign_up"
+import Connect_aws from "./components/Sign_In_Sign_Up/Connect_aws"
+import Prompt from "./components/PlayGround/Prompt"
 
 const App = () => {
   return (
