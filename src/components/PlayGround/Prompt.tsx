@@ -1,5 +1,6 @@
 import { FaAngleDown } from "react-icons/fa";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { SidebarProvider } from "@/components/ui/sidebar";
+// import {  SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import FlowDiagram from "./FlowDiagram";
 import { IoSparklesSharp } from "react-icons/io5";
@@ -17,7 +18,7 @@ const Prompt: React.FC = () => {
     <div className="flex items-center bg-[#13042A] font-poppins text-white">
       <SidebarProvider>
         <AppSidebar />
-        <SidebarTrigger />
+        {/* <SidebarTrigger /> */}
         <div className="flex h-screen w-screen flex-grow flex-col items-center">
           <p className="flex gap-5 p-5 text-5xl">
             Project name/Untitled file
