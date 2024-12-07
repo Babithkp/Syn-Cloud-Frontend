@@ -18,59 +18,59 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarContent className="bg-[#13042A] opacity-75">
-        <SidebarGroup className="gap-5">
+        <SidebarGroup className="h-16 w-[120px] gap-14">
           <SidebarGroupLabel className="flex justify-center">
             <Link to="/">
               <img
                 src={SyncCloud_Logo}
                 alt="SyncCloud Logo"
-                className="w-16 h-16 p-2"
+                className="h-24 w-24 p-2"
               />
             </Link>
           </SidebarGroupLabel>
           <SidebarGroupContent className="p-2">
-            <SidebarMenu className="text-white flex flex-col items-center gap-8">
+            <SidebarMenu className="flex flex-col items-center gap-8 text-white">
               <SidebarMenuItem>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton size="lg">
                   <Link
                     to="/home"
-                    className="flex items-center justify-center w-16 h-16 bg-[#1F083D]"
+                    className="flex h-16 w-16 items-center justify-center bg-[#1F083D] text-white"
                     aria-label="Home"
                   >
-                    <VscAccount className="w-10 h-10" />
+                    <VscAccount className="h-10 w-10" />
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton size="lg">
                   <Link
                     to="/calendar"
-                    className="flex items-center justify-center w-16 h-16 bg-[#1F083D]"
+                    className="flex h-16 w-16 items-center justify-center bg-[#1F083D] text-white"
                     aria-label="Calendar"
                   >
-                    <IoBookOutline className="w-10 h-10" />
+                    <IoBookOutline className="h-10 w-10" />
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton size="lg">
                   <Link
                     to="/search"
-                    className="flex items-center justify-center w-16 h-16 bg-[#1F083D]"
+                    className="flex h-16 w-16 items-center justify-center bg-[#1F083D] text-white"
                     aria-label="Search"
                   >
-                    <AiFillCode className="w-10 h-10" />
+                    <AiFillCode className="h-10 w-10" />
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild>
+                <SidebarMenuButton size="lg">
                   <Link
                     to="/settings"
-                    className="flex items-center justify-center w-16 h-16 bg-[#1F083D]"
+                    className="flex h-16 w-16 items-center justify-center bg-[#1F083D] text-white"
                     aria-label="Settings"
                   >
-                    <IoSettingsOutline className="w-10 h-10" />
+                    <IoSettingsOutline className="h-10 w-10" />
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
