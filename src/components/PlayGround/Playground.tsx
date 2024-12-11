@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { VscSend } from "react-icons/vsc";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import Dropdown from "./Dropdown";
+import Dropdown from "./Dropdown"; // Ensure Dropdown is correctly implemented
 import { FaAngleDown } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 
-const Playground = () => {
+const Playground: React.FC = () => {
   // State to manage menu visibility
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState<boolean>(false);
+  const [isDropdownVisible, setIsDropdownVisible] = useState<boolean>(false);
 
   // Toggle menu visibility
-  const toggleMenu = (event: React.MouseEvent) => {
-    event.stopPropagation(); // Prevent ReactFlow from handling this click
+  const toggleMenu = (event: React.MouseEvent<HTMLDivElement | HTMLButtonElement>) => {
+    event.stopPropagation(); // Prevent ReactFlow or parent handlers from capturing this click
     setIsMenuVisible((prev) => !prev);
   };
 
@@ -27,29 +27,24 @@ const Playground = () => {
   };
 
   // Close dropdown
-  const closeDropdown = () => {
-    setIsDropdownVisible(false);
-  };
+ 
 
   return (
     <div className="h-full">
       <div className="relative left-[5%] top-[10%] h-[85%] w-[90%] rounded-xl border-2 border-dotted border-red-500">
         <span className="rounded-xl w-[22vw] bg-white p-2 text-black flex items-center gap-3">
           Create a EC2 instance with 4GB Ram
-          <GoDotFill
-                  size={30}
-                  className=" left-5 top-1/4 text-red-600"
-                />
+          <GoDotFill size={30} className=" left-5 top-1/4 text-red-600" />
         </span>
         <div className="relative left-[5%] top-[10%] h-[75%] w-[90%] rounded-xl border-2 border-dotted border-green-500">
           <span className="rounded-lg w-[10vw] bg-[#00BA28C9] p-1 text-black flex items-center gap-5">
             ap-south-01m
-            <FaAngleDown/>
+            <FaAngleDown />
           </span>
           <div className="relative left-[5%] top-[10%] h-[70%] w-[90%] rounded-xl border-2 border-dotted border-blue-500">
             <span className="rounded-lg w-[11vw] bg-[#0066BA] p-1 text-black flex items-center gap-5">
               Availability zone
-              <FaAngleDown/>
+              <FaAngleDown />
             </span>
             <div
               className="relative left-[35%] top-[20%] h-[50%] w-[30%] cursor-pointer rounded-xl border-2 border-dotted border-[#E3750D]"
@@ -71,7 +66,7 @@ const Playground = () => {
         {/* Menu Container */}
         <div
           className="absolute bottom-0 right-0 inline-block text-right"
-          onClick={(e) => e.stopPropagation()} // Prevent ReactFlow from capturing clicks
+          onClick={(e) => e.stopPropagation()} // Prevent ReactFlow or parent handlers from capturing this click
         >
           {isMenuVisible && (
             <div
@@ -81,17 +76,13 @@ const Playground = () => {
               <div className="py-1">
                 <button
                   className="block w-full px-4 py-2 text-left text-sm text-red-600 hover:bg-gray-100 hover:text-red-800"
-                  onClick={() => {
-                    closeMenu(); // Close menu after action
-                  }}
+                  onClick={closeMenu} // Close menu after action
                 >
                   Terminate Services
                 </button>
                 <button
                   className="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                  onClick={() => {
-                    closeMenu(); // Close menu after action
-                  }}
+                  onClick={closeMenu} // Close menu after action
                 >
                   Add Services
                 </button>
