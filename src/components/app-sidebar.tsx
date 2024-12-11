@@ -18,17 +18,17 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarContent className="bg-[#13042A] opacity-75">
-        <SidebarGroup className="h-16 w-[120px] gap-14">
-          <SidebarGroupLabel className="flex justify-center">
+        <SidebarGroup className="h-16  gap-14">
+          <SidebarGroupLabel className="flex justify-center mt-3">
             <Link to="/">
               <img
                 src={SyncCloud_Logo}
                 alt="SyncCloud Logo"
-                className="h-24 w-24 p-2"
+                className="h-24 w-24 p-1"
               />
             </Link>
           </SidebarGroupLabel>
-          <SidebarGroupContent className="p-2">
+          <SidebarGroupContent className="p-4">
             <SidebarMenu className="flex flex-col items-center gap-8 text-white">
               <SidebarMenuItem>
                 <SidebarMenuButton size="lg">
