@@ -21,12 +21,12 @@ const Prompt: React.FC = () => {
           </p>
           <div className="relative h-[85%] w-[90%] rounded-2xl border-2">
             <div className="absolute flex w-full justify-end gap-28">
-              <div className="relative z-50 mr-5 mt-5 flex h-[10%] w-[20%] rounded-3xl bg-white font-normal text-black">
+              <div className="relative z-50 mr-5 mt-5 flex w-[20%] rounded-3xl bg-white font-normal text-black">
                 <GoDotFill
                   size={30}
-                  className="absolute left-5 top-1/4 text-green-600"
+                  className="absolute left-5 top-1 text-green-600"
                 />
-                <p className="flex min-w-full items-center justify-end gap-16 p-5 text-center text-xl">
+                <p className="flex min-w-full items-center justify-end gap-16 p-1 text-center text-xl">
                   Name
                   <FaAngleDown />
                 </p>
