@@ -28,7 +28,7 @@ export function AppSidebar() {
               />
             </Link>
           </SidebarGroupLabel>
-          <SidebarGroupContent className="p-4">
+          <SidebarGroupContent className="p-1">
             <SidebarMenu className="flex flex-col items-center gap-8 text-white">
               <SidebarMenuItem>
                 <SidebarMenuButton size="lg">
