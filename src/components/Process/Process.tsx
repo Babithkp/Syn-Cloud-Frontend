@@ -27,18 +27,18 @@ const Process: React.FC = () => {
 
   return (
     <>
-      <div className="bg-black text-white text-center font-poppins ">
-        <h1 className="text-5xl font-bold">Our Process</h1>
-        <p className="p-4 text-xl font-thin">Simplifying AWS automation by seamlessly configuring services to enhance efficiency and optimize cloud resource management</p>
+      <div className="bg-black text-white text-center font-poppins pt-10">
+        <h1 className="text-4xl md:text-5xl font-bold">Our Process</h1>
+        <p className="p-4 text-lg md:text-xl font-thin">Simplifying AWS automation by seamlessly configuring services to enhance efficiency and optimize cloud resource management</p>
       </div>
-      <div className="h-[128vh] relative flex justify-center items-center text-white"
+      <div className="min-h-screen flex flex-col justify-center items-center text-white"
         style={{
-          background: "radial-gradient(circle, #4B237F, #000000)",
+          background: "linear-gradient(to bottom, black 10%, #4B237F)",
         }}
       >
-        <div className="w-[70vw] flex align-middle items-center gap-10">
+        <div className="w-[90vw] md:w-[70vw] flex flex-col md:flex-row align-middle items-center gap-10">
           {/* Left Side - Steps with Dotted Line */}
-          <div className="relative h-full w-[60%] flex flex-col font-extralight">
+          <div className="relative h-full w-full md:w-[60%] flex flex-col font-extralight">
             {/* Dotted Line */}
             <div
               className="border-l-2 border-dotted border-gray-600 absolute right-4 top-5"
@@ -50,15 +50,15 @@ const Process: React.FC = () => {
             {/* Steps */}
             {steps.map((step, index) => (
               <div key={index} className="flex items-center mb-10 relative justify-between">
-                <span className={`my-5 text-2xl text-right w-[90%] ${index === currentStep ? "text-white font-semibold" : "text-gray-400"}`}>
+                <span className={`my-5 text-lg md:text-2xl text-right w-[90%] ${index === currentStep ? "text-white font-semibold" : "text-gray-400"}`}>
                   {step.title}
                 </span>
                 <div
-                  className={`w-10 h-10 flex items-center justify-center rounded-full border-2 transition-all duration-300 ${
-                    index <= currentStep ? "" : "bg-gray-400 backdrop:blur-md bg-opacity-50 border-gray-400"
+                  className={`w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full transition-all duration-300 ${
+                    index <= currentStep ? "bg-slate-50 text-black backdrop:blur-md" : " hidden"
                   }`}
                 >
-                  <span className={`${index <= currentStep ? "text-white" : "text-white"}`}>
+                  <span className={`${index <= currentStep ? "text-black font-semibold" : "text-white"}`}>
                     {index + 1}
                   </span>
                 </div>
@@ -67,40 +67,34 @@ const Process: React.FC = () => {
           </div>
 
           {/* Right Side - Step Content */}
-          <div className="flex-1 font-light ">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className={` ${index === currentStep ? "" : "opacity-0"} w-[20%] h-[40%] text-start transform translate-transform overflow-hidden absolute top-9 bg-gray-500 bg-opacity-50 backdrop-blur-md p-4 rounded-lg shadow-lg`}
-                style={{ marginTop: `${index * 7}%` }}
-              >
-                <h2 className="text-2xl font-bold mb-4">{step.title1}</h2>
-                <p className="text-gray-300">{step.description}</p>
-              </div>
-            ))}
+          <div className="flex-1 font-light p-4">
+            <div className="bg-gray-500 bg-opacity-50 backdrop-blur-md p-6 rounded-lg shadow-lg">
+              <h2 className="text-xl md:text-2xl font-bold mb-4">{steps[currentStep].title1}</h2>
+              <p className="text-gray-300">{steps[currentStep].description}</p>
+            </div>
           </div>
-        </div>
 
-        {/* Arrow Buttons on the Far Right of the Screen */}
-        <div className="flex flex-col space-y-4 items-center absolute right-12 top-1/2 transform -translate-y-1/2">
-          <button
-            onClick={prevStep}
-            disabled={currentStep === 0}
-            className={`${
-              currentStep === 0 ? " cursor-not-allowed" : ""
-            } bg-gray-400 bg-opacity-50 backdrop-blur-md text-white font-bold py-2 px-4 h-14 rounded-2xl transition-all duration-300`}
-          >
-            <IoIosArrowUp />
-          </button>
-          <button
-            onClick={nextStep}
-            disabled={currentStep === steps.length - 1}
-            className={`${
-              currentStep === steps.length - 1 ? " cursor-not-allowed" : ""
-            } bg-gray-400 bg-opacity-50 backdrop-blur-md h-14 text-white font-bold py-2 px-4 rounded-2xl transition-all duration-300`}
-          >
-            <IoIosArrowDown />
-          </button>
+          {/* Arrow Buttons */}
+          <div className="flex space-x-4 mt-6">
+            <button
+              onClick={prevStep}
+              disabled={currentStep === 0}
+              className={`${
+                currentStep === 0 ? "cursor-not-allowed" : ""
+              } bg-gray-400 bg-opacity-50 backdrop-blur-md text-white font-bold py-2 px-4 h-14 rounded-2xl transition-all duration-300`}
+            >
+              <IoIosArrowUp size={24} />
+            </button>
+            <button
+              onClick={nextStep}
+              disabled={currentStep === steps.length - 1}
+              className={`${
+                currentStep === steps.length - 1 ? "cursor-not-allowed" : ""
+              } bg-gray-400 bg-opacity-50 backdrop-blur-md h-14 text-white font-bold py-2 px-4 rounded-2xl transition-all duration-300`}
+            >
+              <IoIosArrowDown size={24} />
+            </button>
+          </div>
         </div>
       </div>
     </>

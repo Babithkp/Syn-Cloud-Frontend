@@ -1,4 +1,5 @@
-import Card from "./Card.jsx"; // Make sure the Card component uses .jsx extension
+import Card from "./Card";
+
 const focusAreas = [
   {
     title: "Automation",
@@ -33,13 +34,9 @@ const focusAreas = [
 ];
 
 // CardContainer component to display the cards in a responsive grid layout
-
 const CardContainer = () => {
   return (
-    <div className="mx-auto grid grid-cols-1 gap-8 px-5 md:grid-cols-2 lg:grid-cols-3 lg:px-20">
-      {/* max-w-screen-xl limits the maximum width */}
-      {/* Each Card component represents a focus area with a title and description */}
-
+    <div className="mx-auto max-w-screen-xl grid grid-cols-1 gap-8 px-5 sm:grid-cols-2 lg:grid-cols-3 lg:px-20">
       {focusAreas.map((focusArea, index) => (
         <Card
           key={index}
@@ -51,4 +48,4 @@ const CardContainer = () => {
   );
 };
 
-export default CardContainer ;
+export default CardContainer;
