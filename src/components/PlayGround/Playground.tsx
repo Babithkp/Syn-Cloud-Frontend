@@ -10,6 +10,7 @@ const Playground: React.FC = () => {
   const [isMenuVisible, setIsMenuVisible] = useState<boolean>(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState<boolean>(false);
   const [showDetails, setShowDetails] = useState<boolean>(false);
+  const [isBorderWhite, setIsBorderWhite] = useState<boolean>(false); // New state for border color
 
   const toggleMenu = (
     event: React.MouseEvent<HTMLDivElement | HTMLButtonElement>,
@@ -28,11 +29,16 @@ const Playground: React.FC = () => {
 
   const handleSendClick = () => {
     setShowDetails(true); // Show details when the button is clicked
+    setIsBorderWhite(true); // Change border to white
   };
 
   return (
     <div className="h-full">
-      <div className="relative left-[5%] top-[10%] h-[85%] w-[90%] rounded-xl border-2 border-dotted border-red-500">
+      <div
+        className={`relative left-[5%] top-[10%] h-[85%] w-[90%] rounded-xl ${
+          isBorderWhite ? "border-white" : "border-red-500"
+        } border-2 border-dotted`}
+      >
         <span className="flex w-[28vw] items-center gap-3 rounded-xl bg-white p-2 text-black">
           Create a EC2 instance with 4GB Ram
           <GoDotFill size={30} className="left-5 top-1/4 text-red-600" />
@@ -51,12 +57,11 @@ const Playground: React.FC = () => {
               className="relative left-[35%] top-[8%] h-[60%] w-[40%] cursor-pointer rounded-xl border-2 border-dotted border-[#E3750D] font-poppins"
               onClick={toggleDropdown}
             >
-              <div className="flex">
+              <div className="flex m-6">
                 <img className="m-2 w-[25%]" src={EC2} alt="" />
                 <div className="mt-3 flex flex-col text-left">
                   <p>EC2</p>
                   <p className="text-sm text-gray-400">my web server</p>
-                  {/* Render details below "my web server" */}
                   {showDetails && (
                     <div className="mt-2">
                       <p className="text-sm">Instance ID - qwewe2345</p>

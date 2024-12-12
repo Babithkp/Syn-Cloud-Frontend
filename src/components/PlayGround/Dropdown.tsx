@@ -18,11 +18,14 @@ const Dropdown: React.FC = () => {
     parent: number | null;
     child: number | null;
   }>({ parent: null, child: null });
+
+  const [vpcId, setVpcId] = useState<string | null>(null); // State for VPC ID
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  // Fetch dropdown data and VPC ID from backend
   useEffect(() => {
     const fetchData = async () => {
-      const data: DropdownItem[] = [
+      const dropdownData: DropdownItem[] = [
         {
           name: "Operating System (AMI)",
           children: [
@@ -48,20 +51,29 @@ const Dropdown: React.FC = () => {
         {
           name: "Network Settings",
           children: [
-            { label: "RHEL 7", tag: "" },
-            { label: "RHEL 8", tag: "" },
+            { label: "Subnet", tag: "" },
             {
               label: "Auto-assign Public IP",
               tag: "",
-              nestedChildren: [{ label: "Enabled" }, { label: "Disabled" }],
+              nestedChildren: [
+                { label: "Enable", tag: "" },
+                { label: "Disable", tag: "" },
+              ],
             },
+            { label: "Firewall", tag: "" },
           ],
         },
         {
           name: "Storage",
           children: [
-            { label: "SUSE 12", tag: "" },
-            { label: "SUSE 15", tag: "" },
+            { label: "General purpose SSD (gp3)", tag: "" },
+            { label: "Provisional IOPS SSD (io2)", tag: "" },
+            { label: "io1", tag: "" },
+            { label: "st1", tag: "" },
+            { label: "sc1", tag: "" },
+            { label: "Amazon FSx", tag: "" },
+            { label: "S3", tag: "" },
+            { label: "Glacier", tag: "" },
           ],
         },
         {
@@ -69,7 +81,16 @@ const Dropdown: React.FC = () => {
           children: [{ label: "User data (Optional)", tag: "" }],
         },
       ];
-      setItems(data);
+
+      setItems(dropdownData);
+
+      // Simulate backend call to fetch VPC ID
+      const fetchVpcId = async () => {
+        const vpcIdFromBackend = "vpc-04a548e72a380090a"; // Replace with actual backend response
+        setVpcId(vpcIdFromBackend);
+      };
+
+      fetchVpcId();
     };
 
     fetchData();
@@ -87,9 +108,12 @@ const Dropdown: React.FC = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("mousedown", handleClickOutside);
+    const handleOutsideClick = (event: MouseEvent) => handleClickOutside(event);
+
+    window.addEventListener("mousedown", handleOutsideClick);
+
     return () => {
-      window.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("mousedown", handleOutsideClick);
     };
   }, []);
 
@@ -139,7 +163,7 @@ const Dropdown: React.FC = () => {
               id="instance-name"
               type="text"
               placeholder="Enter an instance name"
-              className="h-11 w-full rounded-md border-2 border-transparent bg-[#131313] px-4 text-base text-gray-400 transition-all duration-300 focus:border-gray-700 focus:outline-none focus:ring focus:ring-gray-500"
+              className="w-full rounded-xl border-none bg-[#131313] p-3 text-gray-400"
             />
           </li>
 
@@ -168,12 +192,21 @@ const Dropdown: React.FC = () => {
                   role="menu"
                 >
                   <ul className="py-1">
+                    {item.name === "Network Settings" && vpcId && (
+                      <li className="px-4 py-2 text-sm text-gray-400">
+                        VPC: {vpcId}
+                      </li>
+                    )}
                     {item.children.map((child, childIndex) => (
                       <li
                         key={childIndex}
-                        className="group relative flex cursor-pointer items-center justify-between px-4 py-2 text-sm text-white"
+                        className={`group relative flex cursor-pointer items-center justify-between px-4 py-2 text-sm backdrop:blur-sm hover:rounded-xl hover:bg-gray-950 hover:opacity-60 ${
+                          activeChildIndex === childIndex
+                            ? "bg-gray-700"
+                            : "text-white"
+                        }`}
                         onMouseEnter={() => setActiveChildIndex(childIndex)}
-                        onMouseLeave={() => {}}
+                        onMouseLeave={() => setActiveChildIndex(null)}
                         onClick={() => handleChildClick(index, childIndex)}
                         role="menuitem"
                       >
@@ -181,36 +214,32 @@ const Dropdown: React.FC = () => {
                         <span
                           className={`${
                             child.tag === "Free"
-                              ? "rounded-2xl border-2 border-[#009D22] bg-gray-800 px-2 text-[#009D22] backdrop-blur-0"
+                              ? "rounded-2xl border-2 border-[#009D22] bg-gray-800 px-2 text-[#009D22]"
                               : child.tag === "Paid"
-                                ? "rounded-2xl border-2 border-[#BAC800] bg-gray-800 px-2 text-[#BAC800] backdrop-blur-0"
+                                ? "rounded-2xl border-2 border-[#BAC800] bg-gray-800 px-2 text-[#BAC800]"
                                 : "text-gray-400"
                           }`}
                         >
                           {child.tag}
                         </span>
-
-                        {child.nestedChildren &&
-                          activeChildIndex === childIndex && (
+                        {/* Nested Dropdown */}
+                        {activeChildIndex === childIndex &&
+                          child.nestedChildren && (
                             <div
                               className="absolute left-full top-0 z-30 ml-2 w-40 rounded-md bg-[#131313] shadow-lg ring-1 ring-black ring-opacity-5"
                               role="menu"
                             >
                               <ul className="py-1">
                                 {child.nestedChildren.map(
-                                  (nestedChild, nestedIndex) => (
+                                  (nestedChild, nestedChildIndex) => (
                                     <li
-                                      key={nestedIndex}
-                                      className="cursor-pointer px-4 py-2 text-sm text-white hover:bg-gray-700"
-                                      role="menuitem"
-                                      onClick={(e) => {
-                                        e.stopPropagation();
-                                        console.log("Nested Child clicked:", {
-                                          parent: item.name,
-                                          child: child.label,
-                                          nestedChild: nestedChild.label,
-                                        });
-                                      }}
+                                      key={nestedChildIndex}
+                                      className="px-4 py-2 text-sm bg-[#131313] text-white"
+                                      onClick={() =>
+                                        console.log(
+                                          `Nested Child clicked: ${nestedChild.label}`,
+                                        )
+                                      }
                                     >
                                       {nestedChild.label}
                                     </li>
@@ -221,6 +250,39 @@ const Dropdown: React.FC = () => {
                           )}
                       </li>
                     ))}
+
+                    {/* Render the upload UI outside the map to avoid duplication */}
+                    {item.name === "Advanced Details" && (
+                      <div className="mt-2 space-y-3 rounded-lg bg-[#131313] p-3">
+                        {/* Hidden file input */}
+                        <input
+                          type="file"
+                          id="file-input"
+                          className="hidden"
+                          onChange={(e) => {
+                            const file = e.target.files?.[0];
+                            if (file) {
+                              console.log("Selected file:", file.name);
+                              // You can handle the file here (e.g., upload to the server or display its name)
+                            }
+                          }}
+                        />
+                        {/* Button to trigger file input click */}
+                        <button
+                          className="block w-full rounded-xl border-2 border-blue-500 px-4 py-2 text-gray-300"
+                          onClick={() =>
+                            document.getElementById("file-input")?.click()
+                          }
+                        >
+                          Upload File
+                        </button>
+                        <textarea
+                          rows={4}
+                          placeholder="Upload data will appear here"
+                          className="w-full rounded-lg border border-gray-500 bg-[#131313] p-3 text-gray-300 focus:border-gray-400"
+                        />
+                      </div>
+                    )}
                   </ul>
                 </div>
               )}
